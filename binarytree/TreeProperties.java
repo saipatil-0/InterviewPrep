@@ -15,6 +15,9 @@ import java.util.Queue;
  */
 public class TreeProperties {
     
+    static int size;
+
+    
     
     public static void main(String[] args) {
         Tree t = new Tree();
@@ -28,6 +31,12 @@ public class TreeProperties {
         widthOfBinaryTree(root); 
   
         System.out.println("Diameter of binary tree is =>"+diameterOfBinaryTree(root)); 
+        
+        
+         sizeOfBinaryTree(root); 
+  
+        System.out.println("Size of binary tree is =>"+size); 
+       
         
   
   
@@ -124,6 +133,20 @@ public class TreeProperties {
             }
         }
         
+        
+    }
+    
+    
+    public static void sizeOfBinaryTree(Node root)
+    {
+        
+        if(root==null)
+        {
+            return;
+        }
+        size++;
+        sizeOfBinaryTree(root.left);
+        sizeOfBinaryTree(root.right);
         
     }
     
